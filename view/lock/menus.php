@@ -14,15 +14,19 @@
 <div class="nav-collapse collapse">
 <ul class="nav" id="mainNavigation">
 <li class="active">
-<a href="?action=product-list">Cửa hàng </a>
+<a href="?action=home">HOME</a>
 </li>
-<!--
-<li>
-<a href="shop.html">Cửa hàng</a>
-</li>
--->
+
+<?php
+$getmenu = new product();
+$result = $getmenu->getProductType();
+?>
+<?php while ($set = $result -> fetch()): ?>
 <li class="dropdown">
-<a href="?action=product-list" class="dropdown-toggle">Điện thoại <b class="caret"></b> </a>
+<a href="?action=product-list" class="dropdown-toggle"><?php echo $set['TypeName']?><b class="caret"></b> </a>
+<?php endwhile; ?>
+
+<?php  ?>
 <ul class="dropdown-menu">
 <li><a href="shop.html">Apple</a></li>
 <li><a href="shop.html">Sony</a></li>
@@ -30,39 +34,7 @@
 <li><a href="shop.html">Blackberry</a></li>
 </ul>
 </li>
-<li class="dropdown">
-<a href="shop.html" class="dropdown-toggle">Máy tính bảng <b class="caret"></b> </a>
-<ul class="dropdown-menu">
-<li><a href="shop.html">Ipad</a></li>
-<li><a href="shop.html">Microsoft</a></li>
-<li><a href="shop.html">Android</a></li>
-<li><a href="shop.html">404 Page</a></li>
-</ul>
-</li>
-<li class="dropdown">
-<a href="shop.html" class="dropdown-toggle">Laptop <b class="caret"></b> </a>
-<ul class="dropdown-menu">
-<li><a href="shop.html">Macbook</a></li>
-<li><a href="shop.html">Bussines</a></li>
-</ul>
-</li>
-<li class="dropdown">
-<a href="shop.html" class="dropdown-toggle">Phụ kiện <b class="caret"></b> </a>
-<ul class="dropdown-menu">
-<li><a href="shop.html">Âm thanh</a></li>
-<li><a href="shop.html">Sạc dự phòng</a></li>
-<li><a href="shop.html">Lưu trữ</a></li>
-<li><a href="shop.html">Apple</a></li>
-</ul>
-</li>
-<li class="dropdown">
-<a href="blog.html" class="dropdown-toggle">Tin tức <b class="caret"></b> </a>
-<ul class="dropdown-menu">
-<li><a href="blog.html">Công nghệ</a></li>
-<li><a href="blog-single.html">Tuyển dụng</a></li>
-</ul>
-</li>
-</ul>
+
 
 
 
@@ -158,4 +130,4 @@ Qty: 1
 </div>
 </div>
 </div>
-</div>  
+</div>
